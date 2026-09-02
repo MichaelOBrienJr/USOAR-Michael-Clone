@@ -1,0 +1,72 @@
+# Project template
+
+A simple template for research project repos. You can also use [data science and reproducible science cookie cutters](https://github.com/audreyr/cookiecutter#data-science).
+
+## Project structure
+
+This template contains the following folders and files. See `README.md` in each folder for more details and guidelines.
+
+1. `src` for project source code (installed as editable package).
+1. `tests` for unit tests.
+1. `data` for raw & derived datasets.
+1. `libs` for third-party or vendored packages.
+1. `models` for trained models.
+1. `notebooks` for (timestamped) experiment notebooks.
+1. `paper` for manuscripts.
+1. `results` for results (figures, tables, etc.)
+1. `notes` for research notes.
+1. `workflow` for workflow files and scripts.
+1. `dashboard` for the local project status and ownership view.
+1. `.gitignore` for temporary and generated files.
+
+## Python environment
+
+This template uses [uv](https://docs.astral.sh/uv/) for Python environment management. Run the setup script for initial configuration:
+
+```sh
+./setup.sh          # Install dependencies and configure environment
+```
+
+### Key files
+
+- `.python-version` — specifies the required Python release
+- `.venv/` — virtual environment directory (created by uv)
+- `pyproject.toml` — project metadata and dependency declarations
+- `uv.lock` — reproducible dependency snapshot (commit to version control)
+- `.envrc` — optional [direnv](https://direnv.net/) configuration
+
+### Common commands
+
+```sh
+uv add PACKAGE      # Add dependency
+uv sync             # Install from lockfile
+uv run script.py    # Run script in virtual environment
+```
+
+See [Python environment setup](https://yyahn.com/wiki/Python/Environment%20setup/) for details.
+
+## Linting and formatting
+
+[ruff](https://docs.astral.sh/ruff/) is included as a dev dependency. Use `make lint` to check for issues and `make format` to auto-format.
+
+### Pre-commit hooks
+
+The setup script installs hooks when Git is using the repository's standard hook directory.
+To run every hook manually:
+
+```sh
+uv run pre-commit run --all-files
+```
+
+## Common project commands
+
+- `make check` — run formatting, linting, tests, and a workflow dry run
+- `make all` — run the full Snakemake pipeline through `paper/current/main.pdf`
+- `make paper` — build the main paper without running the analysis
+- `make monitor` — continuously rebuild the main paper while editing
+- `make dashboard` — regenerate the local project status dashboard
+
+## Project dashboard
+
+Update `dashboard/status.toml` after meaningful project work, then run `make dashboard` and open `dashboard/index.html`.
+The HTML file is generated locally and is not committed.

@@ -1,0 +1,58 @@
+from os.path import join as pjoin
+
+configfile: "config.yaml"
+
+DATA_DIR = config.get("data_dir", "../data/")
+RAW_DATA_DIR = pjoin(DATA_DIR, "raw")
+DERIVED_DATA_DIR = pjoin(DATA_DIR, "derived")
+RESULTS_DIR = "../results/"
+SUMMARY_PATH = pjoin(RESULTS_DIR, "summary.txt")
+
+PAPER_DIR = "../paper/current"
+PAPER_PDF_PATH = pjoin(PAPER_DIR, "main.pdf")
+PAPER_SOURCES = [
+    pjoin(PAPER_DIR, "main.tex"),
+    "../paper/main.bib",
+]
+PAPER_RESULTS = [
+    SUMMARY_PATH,
+]
+
+
+rule all:
+    input:
+        PAPER_PDF_PATH,
+
+
+rule paper:
+    """Build the paper after its analysis outputs are ready."""
+    input:
+        makefile=pjoin(PAPER_DIR, "Makefile"),
+        sources=PAPER_SOURCES,
+        results=PAPER_RESULTS,
+    output:
+        PAPER_PDF_PATH,
+    params:
+        paper_dir=PAPER_DIR,
+    shell:
+        "make -C {params.paper_dir} main"
+
+
+rule process_data:
+    """Example rule: process raw data into a derived dataset."""
+    input:
+        pjoin(RAW_DATA_DIR, "{dataset}.csv"),
+    output:
+        pjoin(DERIVED_DATA_DIR, "{dataset}.processed.csv"),
+    shell:
+        "python scripts/process_data.py {input} {output}"
+
+
+rule summarize:
+    """Example rule: generate a summary from processed data."""
+    input:
+        pjoin(DERIVED_DATA_DIR, "example.processed.csv"),
+    output:
+        SUMMARY_PATH,
+    shell:
+        "python scripts/summarize.py {input} {output}"
