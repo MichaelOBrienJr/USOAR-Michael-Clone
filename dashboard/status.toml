@@ -1,22 +1,28 @@
 # Agents: update this file after meaningful project work, then run `make dashboard`.
-project = "Project name"
-updated = "Not yet updated"
-summary = "Replace this with a one-sentence summary of the project's current state."
+project = "USOAR: embedding-based disruption measure (EDM) across domains"
+updated = "2026-09-02"
+summary = "Onboarding stage: notes wiki set up with an ordered reading list and candidate validation sets; no data or analysis yet."
+
+[[workstreams]]
+name = "Reading"
+status = "In progress"
+owner = "Unassigned"
+next_action = "Read Kim et al. (2026) and follow its intro references; see notes/Reading list.md"
 
 [[workstreams]]
 name = "Data"
 status = "Not started"
 owner = "Unassigned"
-next_action = "Define the first data milestone"
+next_action = "Consolidate validation sets into one labeled sheet with a consolidating control set; see notes/Validation sets.md"
 
 [[workstreams]]
 name = "Analysis"
 status = "Not started"
 owner = "Unassigned"
-next_action = "Define the first analysis milestone"
+next_action = "Scope the domain slice (patents, law, or people) after the reading"
 
 [[workstreams]]
 name = "Paper"
 status = "Not started"
 owner = "Unassigned"
-next_action = "Define the first writing milestone"
+next_action = "None until analysis starts"
