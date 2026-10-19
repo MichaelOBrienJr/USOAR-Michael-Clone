@@ -28,7 +28,7 @@ uv run snakemake --cores all
 
 ## Tips
 
-- Import from `src/project_name` in scripts for shared code
+- Import from `src/usoar_edm` in scripts for shared code
 - Use `config.yaml` for paths and parameters
 - Keep scripts focused; one script per output
 - Declare generated figures and tables explicitly as inputs to the paper rule

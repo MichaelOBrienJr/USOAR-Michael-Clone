@@ -10,7 +10,7 @@
 
 - Write clean code with focused tests.
 - Use type hints for all function signatures.
-- Import project code as `from project_name import ...`.
+- Import project code as `from usoar_edm import ...`.
 - Put reusable code in `src/`, not in notebooks or workflow scripts.
 - Timestamp experiment folders as `YYYYMMDD_description`.
 

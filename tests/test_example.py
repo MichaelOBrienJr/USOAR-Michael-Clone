@@ -1,6 +1,6 @@
 """Example tests — replace with your own tests."""
 
-from project_name.example import hello
+from usoar_edm.example import hello
 
 
 def test_hello_default() -> None:

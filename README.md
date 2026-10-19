@@ -1,4 +1,8 @@
-# Project template
+# USOAR: embedding-based disruption measure across domains
+
+UVA USOAR project (2026–27) extending the embedding disruptiveness measure (EDM) of Kim, Kojaku, and Ahn (2026) to new domains such as patents and law. Research notes are in `notes/`; status is in `dashboard/status.toml`.
+
+The rest of this README is the lab project template's guide.
 
 A simple template for research project repos. You can also use [data science and reproducible science cookie cutters](https://github.com/audreyr/cookiecutter#data-science).
 
