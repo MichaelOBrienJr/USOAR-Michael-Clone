@@ -1,25 +1,25 @@
 # Agents: update this file after meaningful project work, then run `make dashboard`.
 project = "USOAR: embedding-based disruption measure (EDM) across domains"
-updated = "2026-09-02"
-summary = "Onboarding stage: notes wiki set up with an ordered reading list and candidate validation sets; no data or analysis yet."
+updated = "2026-10-19"
+summary = "Onboarding stage: students finishing warm-ups; two-week checklists filed (#5 Geoffrey, #6 Michael) for Oct 19–30. No project data or analysis yet."
 
 [[workstreams]]
 name = "Reading"
 status = "In progress"
-owner = "Unassigned"
-next_action = "Read Kim et al. (2026) and follow its intro references; see notes/Reading list.md"
+owner = "Geoffrey Lin, Michael O'Brien"
+next_action = "Both read Funk & Owen-Smith (2017) and work the CD index by hand on its Figure 1 cases"
 
 [[workstreams]]
 name = "Data"
 status = "Not started"
-owner = "Unassigned"
-next_action = "Consolidate validation sets into one labeled sheet with a consolidating control set; see notes/Validation sets.md"
+owner = "Michael O'Brien"
+next_action = "Pick patents or law and hand-curate 20 landmark works into data/raw/; see #6"
 
 [[workstreams]]
 name = "Analysis"
 status = "Not started"
-owner = "Unassigned"
-next_action = "Scope the domain slice (patents, law, or people) after the reading"
+owner = "Geoffrey Lin"
+next_action = "Implement cd_index in src/ with toy-graph tests; see #5"
 
 [[workstreams]]
 name = "Paper"
